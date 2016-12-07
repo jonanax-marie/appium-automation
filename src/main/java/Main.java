@@ -33,6 +33,7 @@ public class Main {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("deviceName", "0815f81b177f1004");
 //        cap.setCapability("deviceName", "08ce6a00");
+//        test
         cap.setCapability("platformName", "Android");
         cap.setCapability("app", "E:\\unlock_apk-debug.apk");
 
