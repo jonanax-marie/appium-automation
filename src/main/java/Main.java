@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.html5.Location;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -198,8 +199,9 @@ public class Main {
             e.printStackTrace();
         }
 
-        driver.findElementByXPath("//android.widget.Button[@content-desc='close '").click();
-        System.out.println("Close");
+        String loc = driver.findElementByXPath("//android.view.View[@index='1']/descendant::android.widget.Button[@content-desc='close ']").getLocation().toString();
+
+        System.out.println("Close "+loc);
 
         try {
             Thread.sleep(3000);
