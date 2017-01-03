@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.html5.Location;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -46,7 +45,6 @@ public class Main {
         wait.until(ExpectedConditions.elementToBeClickable(By.className("android.widget.FrameLayout")));
 
         driver.findElementByAndroidUIAutomator("new UiSelector().description(\"Apps\")").click();
-
 //        for swiping through apps
 //        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.sec.android.app.launcher:id/apps_grid\").scrollable(true)");
 //        swipe(true);
@@ -61,14 +59,6 @@ public class Main {
 //        }
 //       login(true);
         System.out.println("Welcome to the Job List");
-
-// -----------Changes made for Alvin------------------------------------------
-        driver.findElement(By.id("lbl-9")).click();
-        driver.findElement(By.id("lbl-9")).clear();
-        driver.findElement(By.id("lbl-9")).sendKeys("test");
-
-        driver.findElementByXPath("//android.view.View[@index='3']/descendant::android.view.View[@content-desc='PROD']").click();
-// ----------------------------------------------------------------------------------------
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.view.View[@index='2']/descendant::android.view.View[@content-desc='213 7TH ST, PETALUMA ,CA 94952' and @index='4']")));
 
@@ -208,9 +198,8 @@ public class Main {
             e.printStackTrace();
         }
 
-        String loc = driver.findElementByXPath("//android.view.View[@index='1']/descendant::android.widget.Button[@content-desc='close ']").getLocation().toString();
-
-        System.out.println("Close "+loc);
+        driver.findElementByXPath("//android.widget.Button[@content-desc='close '").click();
+        System.out.println("Close");
 
         try {
             Thread.sleep(3000);
